@@ -1,0 +1,24 @@
+{
+  "name": "nt-5",
+  "version": "1.0.0",
+  "description": "Najot talim darsdagi uyga vazifalari uchun",
+  "main": "index.js",
+  "scripts": {
+    "start": "node watch index",
+    "dev": "nodemon watch index",
+    "test": "node --watch index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javlon-nomozov/najot-talim-5-oy.git"
+  },
+  "author": "Javlon Nomozov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javlon-nomozov/najot-talim-5-oy/issues"
+  },
+  "homepage": "https://github.com/javlon-nomozov/najot-talim-5-oy#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
