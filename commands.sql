@@ -10,7 +10,7 @@ INSERT INTO users (username, email, password) VALUES
 ('user1', 'user1@example.com', 'password'),
 -- ('user-error', 'user-error@example.com', 'pas'), -- returns error
 ('user2', 'user2@example.com', 'password2');
--- //
+-- insert multiple values //
 INSERT INTO users (username, email, password) VALUES
 ('user3', 'user3@example.com', 'password3'),
 ('user4', 'user4@example.com', 'password4'),
@@ -343,5 +343,3 @@ INSERT INTO plants (name, price, description) VALUES
 ('O`simlik5', 59.99, 'O`simlik5 uchun tavsif');
 
 
-SELECT COUNT(DISTINCT city) as city_count, COUNT(city) as all_data from addresses;
-SELECT total_amount,id,order_id,invoice_date,tax_amount, payment_status from invoices order by total_amount desc;
