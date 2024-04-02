@@ -36,7 +36,6 @@ INSERT INTO products (name, description, price, quantity) VALUES
 select * from products;
 
 
-
 -- Orders
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
@@ -50,7 +49,7 @@ INSERT INTO orders (user_id, product_id, product_count, total_amount) VALUES
 (1, 1, 2, 39.98),
 (2, 3, 1, 9.99),
 (3, 2, 3, 89.97),
-(4, 5, 1, 49.99),
+(1, 5, 1, 49.98),
 (5, 4, 2, 79.98);
 -- select command
 Select * from orders;
@@ -251,9 +250,9 @@ CREATE TABLE messages (
 INSERT INTO messages (sender_id, receiver_id, message_text) VALUES
 (1, 2, 'Salom, qalaysiz?'),
 (2, 1, 'Yaxshi, rahmat.'),
-(3, 4, 'Paketni qabul qildingizmi?'),
-(4, 3, 'Ha, hamma narsa yaxshi holatda.'),
-(5, 1, 'Yetkazib berishni qachon kutayapsiz?');
+(1, 4, 'Paketni qabul qildingizmi?'),
+(4, 1, 'Ha, hamma narsa yaxshi holatda.'),
+(5, 2, 'Yetkazib berishni qachon kutayapsiz?');
 
 
 -- Events
@@ -342,4 +341,31 @@ INSERT INTO plants (name, price, description) VALUES
 ('O`simlik4', 49.99, 'O`simlik4 uchun tavsif'),
 ('O`simlik5', 59.99, 'O`simlik5 uchun tavsif');
 
+SELECT 'userlarga ko`ra buyurtmalar soni' as comment;
+SELECT user_id, COUNT(*) as order_count, SUM(total_amount) as total_amount from orders group by user_id;
 
+select 'maxsulotlarning o`rtacha reytingi' as comment;
+SELECT product_id, AVG(rating) as avg_rating from reviews group by product_id;
+
+select 'foydalanuvchilarning turlixil to`lov turidan foydalangani (miqdori)' as comment;
+SELECT payment_method, SUM(amount) AS total_amount FROM payments GROUP BY payment_method;
+
+select 'foydalanuvchilarning yuborgan xabarlari soni' as comment;
+SELECT sender_id, COUNT(*) as message_count FROM messages GROUP BY sender_id;
+
+select 'foydalanuvchilarning umumiy qilgan to`lovlari' as comment;
+SELECT user_id, SUM(total_amount) as total_paid FROM orders GROUP BY user_id;
+
+select 'Eng ko`p xarajat qilgan foydalanuvchi \n-- bu yo`l bilan user_id ni ob bo`mas ekan' as comment;
+SELECT max(total_paid) 
+from (
+  SELECT orders.user_id as user_id, SUM(total_amount) as total_paid 
+  FROM orders GROUP BY user_id
+  ) foo;
+
+select 'Yaxshiroq, soddaroq tezroq ishidigan usul' as comment;
+SELECT user_id, SUM(total_amount) as total_paid FROM orders GROUP BY user_id ORDER BY total_paid DESC LIMIT 1;
+
+select 'Eng arzon maxsulot narxi' as comment;
+SELECT MIN(price) AS lowest_price
+FROM products;
