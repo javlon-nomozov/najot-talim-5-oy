@@ -3,20 +3,6 @@
 Natot Ta'lim markazidagi dars va uyga vazifalar uchun
 
 ## Uyga vazifa
-- ALTER TABLE, COALESCE, TIMESTAMPTS and DATES bilan tanishish 
-- githubda 30-days-of-javascript degan repo yarating - uni clone qiling 
-- vs codeda uni oching 
-- closures, basic-array-transformations va hokazo ko'rinishida https://leetcode.com/studyplan/30-days-of-javascript/ linkdagi bo'lim nomlarig mos papkalar yaratib chiqing, 
-- hamma o'zgarishlarni hozirgachasini 1 ta commitda yozing. 
-- Keyin birinchi bo'limdan boshlab masalalarni ishlashni boshlang. Birinchi leetcodeda ishlab keyin vscodeda misol uchun closures/create-hello-world-function.js faylga yechimni ko'chirib har bir misolni bitta commit qiling, yuqoridagi yechimni git commit -m "solved(closures): create hello world function" ko'rinishda commitlang. 15ta masalani yeching. Shunda sizda initial commit bilan 16 ta jami commit bo'ladi. Bilmagan savollaringizni guruhda so'rang
-
-# leetcode dan o'rgangan yangi narsam \(😁 for test\)
-```javascript []
-console.log('Hello world!')
-```
-```python []
-print('Hello world!')
-```
-```ruby []
-puts 'Hello world!'
-```
+- darsdagi 5 ta one-to-many bog'lanishlarga sql kod yozish
+- erp-guide-n6 loyihamizni strukturasi uchun sql kod yozish orzumirzayev.uzga kirib (admin, admin_1234) jadvallar nomlari va bog'lanishlarni ko'rishingiz mumkin. 
+- 10 ta turli xil websitelarga kirib, one-to-many bog'lanishlarni izlash va sql kodlar yozish. Bog'lanish juftliklarini qaysi saytdan olganingizni ham commentda yozib qo'ying
