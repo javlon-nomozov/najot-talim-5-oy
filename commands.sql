@@ -17,7 +17,6 @@ create table teachers(
 
 -- bitta sinf bitta maktabga tegishli bo'ladi
 -- bitta maktabda ko'p  sinflar bo'ladi
-
 create table classes(
   id serail PRIMARY KEY,
   name NOT NULL varchar(100),
@@ -26,7 +25,6 @@ create table classes(
 
 -- bitta o'quvchi bitta maktabda va bitta sinfda o'qiydi
 -- bitta maktabda ko'p  o'quvchi o'qiydi
-
 create table students(
   id serail PRIMARY KEY,
   first_name NOT NULL varchar(100),
