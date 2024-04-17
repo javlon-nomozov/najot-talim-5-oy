@@ -1,5 +1,5 @@
 import express from "express";
-import addPublisher from "./add-publisher";
+import addPublisher from "./add-publisher.js";
 /**
  *
  * @param {express.Request} req
@@ -7,8 +7,10 @@ import addPublisher from "./add-publisher";
  * @param {express.NextFunction} next
  */
 const postPublisher = (req, res, next) => {
-    const data = addPublisher(req.body)
-    res.json({data})
+    console.log(req.body);
+  addPublisher(req.body).then((data) => {
+    res.json({ data });
+  });
 };
 
-export default {postPublisher}
+export { postPublisher };

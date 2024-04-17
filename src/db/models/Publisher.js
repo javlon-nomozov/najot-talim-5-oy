@@ -17,3 +17,5 @@ const Publisher = db.define("Publisher",{
     tableName: 'publishers',
     timestamps: true
 })
+
+export default Publisher

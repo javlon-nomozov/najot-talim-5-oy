@@ -11,4 +11,5 @@ const dbConfig = {
   pwd: process.env.DB_PWD,
 };
 
-export default { port, hostname, dbConfig };
+export { dbConfig };
+export default { port, hostname };

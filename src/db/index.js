@@ -1,7 +1,5 @@
-
 import { Sequelize } from "sequelize";
-import config from "../shared/config/index.js";
-const dbConfig = config.dbConfig
+import { dbConfig } from "../shared/config/index.js";
 const db = new Sequelize({
   host: dbConfig.host,
   port: dbConfig.port,
