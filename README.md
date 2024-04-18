@@ -8,4 +8,5 @@ Natot Ta'lim markazidagi dars va uyga vazifalar uchun
 - ✅ darsda yozilgan kodlarni sinxron yozib kelish. ziplab ularni ham yuklash.
 
 https://dbdiagram.io/d/belissimo-uz-661e583803593b6b611d7d96
+
 https://dbdiagram.io/d/express24-uz-65464c8b7d8bbd64657aa664
