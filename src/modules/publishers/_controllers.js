@@ -13,4 +13,11 @@ const postPublisher = (req, res, next) => {
   });
 };
 
-export { postPublisher };
+function getPublishers(req, res, next) {
+  return Publisher.findAll().then((data) => {
+    console.log(data);
+    res.json(data);
+  }).catch(err=>console.log(err));
+}
+
+export { postPublisher, getPublishers };
