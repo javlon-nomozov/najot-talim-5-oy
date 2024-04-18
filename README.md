@@ -3,10 +3,9 @@
 Natot Ta'lim markazidagi dars va uyga vazifalar uchun
 
 ## Uyga vazifa
-ERD diagram https://dbdiagram.io/d/library-managment-system-6592e322ac844320ae0eef54 
-- publishers crud tugatish 
-- authors crud tugatish 
-- users crud tugatish (modelda email unique bo'lsin, password hashlansin, role enum bo'lsin)
 
-https://dbdiagram.io/d/belissimo-uz-661e583803593b6b611d7d96
-https://dbdiagram.io/d/express24-uz-65464c8b7d8bbd64657aa664
+ERD diagram https://dbdiagram.io/d/library-managment-system-6592e322ac844320ae0eef54
+
+- publishers crud tugatish
+- authors crud tugatish
+- users crud tugatish (modelda email unique bo'lsin, password hashlansin, role enum bo'lsin)
