@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { postPublisher as postPublisher } from "./_controllers.js";
+import { getPublishers, postPublisher } from "./_controllers.js";
 
 const router = Router();
 
 router.post("/", postPublisher);
-router.get("/");
+router.get("/", getPublishers);
 router.get("/:id");
 router.patch("/:id");
 router.delete("/:id");
