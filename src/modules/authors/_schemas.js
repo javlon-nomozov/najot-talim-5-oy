@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const getPublishersSchema = {
+const getAuthorsSchema = {
   // body: {},
   query: Joi.object({
     // for sorting
@@ -14,13 +14,13 @@ const getPublishersSchema = {
   // params: {},
 };
 
-const getPublisherSchema = {
+const getAuthorSchema = {
   params: Joi.object({
     id: Joi.number().integer(),
   }),
 };
 
-const editPublisherSchema = {
+const editAuthorSchema = {
   body: Joi.object({
     name: Joi.string().min(1).trim(),
   }),
@@ -29,7 +29,7 @@ const editPublisherSchema = {
   }),
 };
 
-const deletePublisherSchema = {
+const deleteAuthorSchema = {
   // body: {},
   // query: {},
   params: Joi.object({
@@ -38,8 +38,8 @@ const deletePublisherSchema = {
 };
 
 export {
-  getPublishersSchema,
-  getPublisherSchema,
-  editPublisherSchema,
-  deletePublisherSchema,
+  getAuthorsSchema,
+  getAuthorSchema,
+  editAuthorSchema,
+  deleteAuthorSchema,
 };
