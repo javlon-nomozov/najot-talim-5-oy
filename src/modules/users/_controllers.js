@@ -19,7 +19,7 @@ const postUser = (req, res, next) => {
     .catch((err) => {
       // next(err);
       // res.status(400).json({ error: err.errors });
-      res.status(400).json({ error: err });
+      res.status(400).json({ error: err.message  });
     });
 };
 
@@ -38,7 +38,7 @@ const loginUserController = (req, res, next) => {
       res.json({ token });
     })
     .catch((err) => {
-      res.status(400).json({ error: 'incorrect email or password' });
+      res.status(400).json({ error: "incorrect email or password" });
     });
 };
 
@@ -91,10 +91,7 @@ function deleteUserController(req, res, next) {
     .then((user) => {
       res.json(user);
     })
-    .catch((err) => {
-      console.log({ err });
-      return console.log({ err: err.message });
-    });
+    .catch((err) => console.log({ err: err.message }));
 }
 
 export {

@@ -15,7 +15,7 @@ const admin = {
   first_name: process.env.ADMIN_FIRST_NAME,
   last_name: process.env.ADMIN_LAST_NAME,
   email: process.env.ADMIN_EMAIL,
-  password: process.env.ADMIN_PASSWORD,
+  password: process.env.ADMIN_PASSWORD, 
   role: "admin",
 };
 

@@ -17,11 +17,11 @@ db.sync({ alter: true, logging: false })
       if (!user) {
         return addUser(config.admin).then((admin) => {
           if (admin) {
-            console.log("admin is created");
+            console.log("Admin is created");
           }
         });
       }
-      delete user.dataValues.password 
+      delete user.dataValues.password;
       console.log("Admin already exist", user.dataValues);
     });
     app.listen(config.port, config.hostname, () => {

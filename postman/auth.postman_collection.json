@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "3de11732-d255-4a47-9bda-bdbebb989233",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30812859",
+		"_collection_link": "https://javlon-s-team.postman.co/workspace/Team-Workspace~0be533a0-76a5-4a85-89c7-45fe262c8194/collection/30812859-3de11732-d255-4a47-9bda-bdbebb989233?action=share&source=collection_link&creator=30812859"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"first_name\":\"John\",\"last_name\":\"Doe\",\"email\":\"example@msad.com\",\"password\":\"12345678\",\"role\":\"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/signup",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"12345678\",\r\n    \"email\":\"javlonnomozov@mail.ru\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/signin",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

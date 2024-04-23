@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import db from '../index.js';
+import Review from "./Reviews.js";
 
 
 const User = db.define("User",{
@@ -36,5 +37,8 @@ const User = db.define("User",{
     tableName: 'users',
     timestamps: true
 })
+
+User.hasMany(Review, { foreignKey: 'user_id' });
+Review.belongsTo(User, { foreignKey: 'user_id' });
 
 export default User

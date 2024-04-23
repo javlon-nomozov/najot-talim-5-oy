@@ -1,14 +1,15 @@
 import { Op } from "sequelize";
-import Publisher from "../../db/models/Publisher.js";
+import Category from "../../db/models/Category.js";
 
-function listPublisher({
+function listCategory({
   q = "",
   sortBy = "createdAt",
   order = "desc",
   offset = 0,
   limit = 5,
 } = {}) {
-  return Publisher.findAndCountAll({
+  return Category.findAndCountAll({
+    include: [{ model: Category, as: "Parent", attributes: ["id", "name"] }],
     offset,
     limit,
     order: [[sortBy, order]],
@@ -18,12 +19,13 @@ function listPublisher({
   })
     .then(({ count, rows }) => {
       return {
-        publishers: rows,
+        users: rows,
         meta: { total: count, offset, limit },
       };
     })
     .catch((err) => {
-      console.log("Error getting  all publishers:", err);
+      console.log("Error getting all users:", err);
     });
 }
-export default listPublisher;
+
+export default listCategory;
