@@ -12,11 +12,15 @@ function loginUser(data) {
     console.log(users);
     if (users && users.length) {
       const user = users[0];
-      if (comparePasswords(data.password, user.password)) {
-        return jwtGenerator(user.id, user.role);
-      }
+      return comparePasswords(data.password, user.password).then((isMatch) => {
+        console.log(isMatch);
+        console.log(data.password, user.password);
+        if (isMatch) {
+          return jwtGenerator(user.id, user.role);
+        }
+        throw new NotFoundError("User nt ofound");
+      });
     }
-    throw new NotFoundError("User not found");
   });
 }
 

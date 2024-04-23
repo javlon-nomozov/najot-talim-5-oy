@@ -38,7 +38,7 @@ const loginUserController = (req, res, next) => {
       res.json({ token });
     })
     .catch((err) => {
-      res.status(400).json({ error: err });
+      res.status(400).json({ error: 'incorrect email or password' });
     });
 };
 
