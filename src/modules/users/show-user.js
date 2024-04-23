@@ -2,7 +2,6 @@ import User from "../../db/models/User.js";
 import NotFoundError from "../../shared/errors/index.js";
 
 export default function showUser(id) {
-  console.log({ id });
   return User.findByPk(id).then((user) => {
     if (!user) {
       throw new NotFoundError("User is not found");

@@ -11,7 +11,6 @@ import deletePublisher from "./delete-publisher.js";
  * @param {express.NextFunction} next
  */
 const postPublisher = (req, res, next) => {
-  console.log({ body: req.body });
   addPublisher(req.body).then((data) => {
     res.json({ data });
   });
@@ -38,7 +37,6 @@ function getPublishers(req, res, next) {
 function getPublisher(req, res, next) {
   showPublisher(req.params.id)
     .then((publisher) => {
-      console.log({ publisher });
       res.json(publisher);
     })
     .catch(next);
@@ -52,7 +50,6 @@ function getPublisher(req, res, next) {
 function patchEditPublisher(req, res, next) {
   editPublisher(req.params.id, req.body)
     .then((publisher) => {
-      console.log({ publisher });
       res.json(publisher);
     })
     .catch(next);
@@ -66,7 +63,6 @@ function patchEditPublisher(req, res, next) {
 function deletePublisherController(req, res, next) {
   deletePublisher(req.params.id)
     .then((publisher) => {
-      console.log({ publisher });
       res.json(publisher);
     })
     .catch(next);

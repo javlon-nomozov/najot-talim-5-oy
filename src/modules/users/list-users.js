@@ -13,7 +13,10 @@ function listUser({
     limit,
     order: [[sortBy, order]],
     where: {
-      name: { [Op.iLike]: `%${q}%` },
+      [Op.or]: [
+        { first_name: { [Op.iLike]: `%${q}%` } },
+        { last_name: { [Op.iLike]: `%${q}%` } },
+      ],
     },
   })
     .then(({ count, rows }) => {
@@ -23,7 +26,8 @@ function listUser({
       };
     })
     .catch((err) => {
-      console.log("Error getting  all users:", err);
+      console.log("Error getting all users:", err);
     });
 }
+
 export default listUser;

@@ -11,5 +11,15 @@ const dbConfig = {
   pwd: process.env.DB_PWD,
 };
 
+const admin = {
+  first_name: process.env.ADMIN_FIRST_NAME,
+  last_name: process.env.ADMIN_LAST_NAME,
+  email: process.env.ADMIN_EMAIL,
+  password: process.env.ADMIN_PASSWORD,
+  role: "admin",
+};
+
+const jwtToken = process.env.JWT_TOKEN
+
 export { dbConfig };
-export default { port, hostname };
+export default { port, hostname, admin, jwtToken };

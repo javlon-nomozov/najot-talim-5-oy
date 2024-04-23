@@ -21,6 +21,16 @@ const User = db.define("User",{
         allowNull: false,
         unique: true
     },
+    password: {
+        type: DataTypes.STRING(500),
+        allowNull: false,
+        defaultValue: 'password'
+    },
+    role: {
+        type: DataTypes.STRING(500),
+        allowNull: false,
+        defaultValue: 'user'
+    }
 },
 {
     tableName: 'users',
